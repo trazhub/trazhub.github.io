@@ -1,30 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/react.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Garv Verma | Creative Developer & Designer</title>
-    <meta name="description" content="Portfolio of Garv Verma (Traz), a creative developer and designer specializing in immersive web experiences, 3D graphics, and performant interfaces." />
-    <meta name="keywords" content="Garv Verma, Traz, Creative Developer, Web Designer, Portfolio, 3D Web, React, Three.js, GSAP" />
-    <meta name="author" content="Garv Verma" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trazhub — Creative Developer & 3D Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://traz.dev/" />
-    <meta property="og:title" content="Garv Verma | Creative Developer & Designer" />
-    <meta property="og:description" content="Creative developer and designer specializing in immersive web experiences and 3D graphics." />
-    <meta property="og:image" content="/images/placeholder.webp" />
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://traz.dev/" />
-    <meta property="twitter:title" content="Garv Verma | Creative Developer & Designer" />
-    <meta property="twitter:description" content="Creative developer and designer specializing in immersive web experiences and 3D graphics." />
-    <meta property="twitter:image" content="/images/placeholder.webp" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">TRAZ<span>HUB</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="mailto:garv@trazz.art" class="nav-cta">GET IN TOUCH ↗</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-inner">
+    <div class="hero-tag">AVAILABLE FOR FREELANCE</div>
+    <h1 class="hero-name">
+      <span class="line1">GARV.</span>
+      <span class="line2">trazhub</span>
+    </h1>
+    <p class="hero-descriptor">
+      Creative Developer &amp; 3D Artist —<br/>
+      building <em>immersive web experiences</em> &amp; digital art.<br/>
+      Based in India. Open to remote collaboration.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">VIEW WORK ↓</a>
+      <a href="https://github.com/trazhub" target="_blank" class="btn-ghost">
+        <span>🐙</span> GITHUB
+      </a>
+      <a href="https://github.com/sponsors/trazhub" target="_blank" class="btn-ghost">
+        <span>💖</span> SPONSOR
+      </a>
+    </div>
+  </div>
+
+  <!-- floating avatar -->
+  <div class="hero-avatar">
+    <div class="avatar-frame">
+      <div class="avatar-ring"></div>
+      <!-- Using a placeholder since Me.jpeg is local -->
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a3a2a,#0d1f18);display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(127,255,178,0.3);">🎮</div>
+    </div>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span>OPEN TO WORK</span>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><em>Java</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">JavaScript <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>3D Design</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">Node.js <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>UI/UX</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">Minecraft Modding <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>Web Security</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">E-Commerce <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>Creative Dev</em><span class="marquee-dot"></span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><em>Java</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">JavaScript <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>3D Design</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">Node.js <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>UI/UX</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">Minecraft Modding <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>Web Security</em><span class="marquee-dot"></span></div>
+    <div class="marquee-item">E-Commerce <span class="marquee-dot"></span></div>
+    <div class="marquee-item"><em>Creative Dev</em><span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-label" data-num="01">ABOUT ME</div>
+      <h2>Creative Dev<br/>&amp; 3D Artist</h2>
+      <p class="about-text" style="margin-top:2rem;">
+        Hey — I'm <strong>Garv</strong>, a developer and 3D artist who loves building things that live at the intersection of code and creativity. I blend <strong>clean engineering</strong> with thoughtful design to craft experiences that are both functional and visually compelling.
+      </p>
+      <p class="about-text">
+        From Java desktop apps to full-stack web projects and voxel art — I explore every corner of the digital canvas. Currently running my own home server and building open-source tools people actually use.
+      </p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">PROJECTS SHIPPED</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">DIRT BLOCKS PLACED</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">OS</div>
+          <div class="stat-label">OPEN SOURCE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-panel reveal reveal-delay-2">
+      <div class="skill-row">
+        <span class="skill-icon">☕</span>
+        <span class="skill-name">Java Development</span>
+        <div class="skill-tags">
+          <span class="skill-tag">FlatLaf</span>
+          <span class="skill-tag">Swing</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-icon">🌐</span>
+        <span class="skill-name">Web Development</span>
+        <div class="skill-tags">
+          <span class="skill-tag">JS</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">Node</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-icon">🎮</span>
+        <span class="skill-name">3D & Voxel Art</span>
+        <div class="skill-tags">
+          <span class="skill-tag">Minecraft</span>
+          <span class="skill-tag">Voxels</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-icon">🛡️</span>
+        <span class="skill-name">Web Security</span>
+        <div class="skill-tags">
+          <span class="skill-tag">Discord API</span>
+          <span class="skill-tag">Auth</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-icon">🔧</span>
+        <span class="skill-name">DevOps & Self-Hosting</span>
+        <div class="skill-tags">
+          <span class="skill-tag">Ubuntu</span>
+          <span class="skill-tag">VPS</span>
+          <span class="skill-tag">Cloudflare</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-icon">🛒</span>
+        <span class="skill-name">E-Commerce & Branding</span>
+        <div class="skill-tags">
+          <span class="skill-tag">Shopify</span>
+          <span class="skill-tag">Social Media</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="projects-inner">
+    <div class="projects-header reveal">
+      <div>
+        <div class="section-label" data-num="02">FEATURED WORK</div>
+        <h2>Projects</h2>
+      </div>
+      <a href="https://github.com/trazhub" target="_blank">VIEW ALL ON GITHUB →</a>
+    </div>
+
+    <div class="projects-grid reveal reveal-delay-1">
+
+      <!-- Featured -->
+      <a href="https://github.com/trazhub/VoxelPort" target="_blank" class="project-card featured">
+        <div class="project-content">
+          <div class="project-num">01 / FEATURED</div>
+          <span class="project-icon">⛏️</span>
+          <div class="project-title">VoxelPort</div>
+          <p class="project-desc">A full-featured Minecraft server manager. Handles automatic Java versioning, one-click tunneling for friends to join, Modrinth plugin browser, and world backup utilities. No router config needed.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span>Java</span><span>FlatLaf</span><span>Cloudflared</span><span>Networking</span>
+            </div>
+            <span class="project-arrow">↗</span>
+          </div>
+        </div>
+        <div class="project-visual">⛏️</div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="https://github.com/trazhub/Discord-Attachment-Viewer-" target="_blank" class="project-card">
+        <div class="project-num">02</div>
+        <span class="project-icon">🛡️</span>
+        <div class="project-title">Discord Attachment Viewer</div>
+        <p class="project-desc">Security tool for safely inspecting Discord attachments. Helps users verify files before downloading, protecting against malicious payloads hidden in media.</p>
+        <div class="project-footer">
+          <div class="project-tech">
+            <span>JavaScript</span><span>Discord API</span><span>Web Security</span>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="https://github.com/trazhub/Storefileswithjs" target="_blank" class="project-card">
+        <div class="project-num">03</div>
+        <span class="project-icon">📦</span>
+        <div class="project-title">StoreFilesWithJS</div>
+        <p class="project-desc">A lightweight file storage utility built on Node.js and VPS storage. Simplifies file transfer workflows with a clean, developer-friendly interface.</p>
+        <div class="project-footer">
+          <div class="project-tech">
+            <span>Node.js</span><span>VPS</span><span>File Transfer</span>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="https://arge.in" target="_blank" class="project-card">
+        <div class="project-num">04</div>
+        <span class="project-icon">🛒</span>
+        <div class="project-title">aRGe</div>
+        <p class="project-desc">E-Commerce and social media brand. Full online store with integrated social presence, online graphics, and a cohesive brand identity built from the ground up.</p>
+        <div class="project-footer">
+          <div class="project-tech">
+            <span>Shopify</span><span>Social Media</span><span>Branding</span>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect-section" id="connect">
+  <div class="connect-inner reveal">
+    <div class="section-label" style="justify-content:center" data-num="03">GET IN TOUCH</div>
+    <h2>Let's Build<br/>Something</h2>
+    <p class="connect-tagline" style="margin-top:1.5rem;">
+      Got a project in mind? I'm open to <em>freelance work</em>, collaborations, or just a good conversation about code and pixels.
+    </p>
+
+    <div>
+      <a href="mailto:garv@trazz.art" class="email-btn">✉ garv@trazz.art</a>
+    </div>
+
+    <div class="social-grid">
+      <a href="https://github.com/trazhub" target="_blank" class="social-link">
+        <span class="icon">🐙</span> GitHub
+      </a>
+      <a href="https://www.instagram.com/garvzero/" target="_blank" class="social-link">
+        <span class="icon">📸</span> Instagram
+      </a>
+      <a href="https://x.com/GarvSukuna69" target="_blank" class="social-link">
+        <span class="icon">🐦</span> X / Twitter
+      </a>
+      <a href="https://www.youtube.com/@Trazhub" target="_blank" class="social-link">
+        <span class="icon">▶</span> YouTube
+      </a>
+      <a href="https://github.com/sponsors/trazhub" target="_blank" class="social-link" style="color:var(--accent3);">
+        <span class="icon">💖</span> Sponsor
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    © 2025 <span>TRAZHUB</span> — ALL RIGHTS RESERVED
+  </div>
+  <div class="footer-right">
+    BUILT WITH 💚 AND DIRT BLOCKS
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
