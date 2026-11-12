@@ -1,0 +1,100 @@
+# /etc/nginx/sites-available/trazlinks
+#
+# Domain: traz.qzz.io
+# After any edits: sudo nginx -t && sudo systemctl reload nginx
+
+# Redirect HTTP → HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name traz.qzz.io;
+
+    # Let's Encrypt ACME challenge
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name traz.qzz.io;
+
+    # ── TLS certificates (issued by Certbot) ──────────────────────
+    ssl_certificate     /etc/letsencrypt/live/traz.qzz.io/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/traz.qzz.io/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/traz.qzz.io/chain.pem;
+
+    # ── TLS hardening ─────────────────────────────────────────────
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Modern cipher list (forward secrecy only)
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+
+    # Pre-generated DH parameters (see guide for how to generate)
+    ssl_dhparam /etc/nginx/dhparam.pem;
+
+    # Session resumption (reduces handshake overhead)
+    ssl_session_timeout 1d;
+    ssl_session_cache   shared:SSL:10m;
+    ssl_session_tickets off;
+
+    # OCSP stapling — speeds up handshake, verified by nginx
+    ssl_stapling        on;
+    ssl_stapling_verify on;
+    resolver 1.1.1.1 8.8.8.8 valid=300s;
+    resolver_timeout 5s;
+
+    # ── Security headers ──────────────────────────────────────────
+    # HSTS: tell browsers to always use HTTPS for 1 year
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+
+    # Block clickjacking (app also sets this via Helmet)
+    add_header X-Frame-Options "DENY" always;
+
+    # Block MIME sniffing
+    add_header X-Content-Type-Options "nosniff" always;
+
+    # Referrer info sent to third parties
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    # Permissions policy — disable unused browser APIs
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()" always;
+
+    # ── Rate limiting (defined in nginx.conf http block) ──────────
+    # Burst of 20, then 10 r/s sustained
+    limit_req zone=trazlinks_api burst=20 nodelay;
+
+    # ── Proxy to Express ──────────────────────────────────────────
+    location / {
+        proxy_pass         http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_set_header   Connection        "";
+
+        proxy_read_timeout    60s;
+        proxy_connect_timeout 10s;
+        proxy_send_timeout    60s;
+
+        # Max upload size (matches multer 5 MB limit + headroom)
+        client_max_body_size 10M;
+
+        # Don't pass server version
+        proxy_hide_header X-Powered-By;
+    }
+
+    # Block common scanner paths quickly
+    location ~* \.(env|git|svn|htaccess|htpasswd)$ {
+        deny all;
+        return 404;
+    }
+}

@@ -3,242 +3,393 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>trazhub | Software Engineer and 3D Artist</title>
+  <title>Garv Verma — Developer &amp; Artist | TrazHub</title>
+  <meta name="description" content="Garv Verma (TrazHub) is a developer and visual artist from India: founder of VoxelPort (free Minecraft server hosting without port forwarding), game design student, builder of Go, Electron and web tools." />
+  <meta name="theme-color" content="#f3eee2" />
+  <link rel="canonical" href="https://trazz.art/" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Garv Verma — Developer &amp; Artist" />
+  <meta property="og:description" content="Founder of VoxelPort, game design student, and builder of tiny internet machines. Code and craft, in one place." />
+  <meta property="og:url" content="https://trazz.art/" />
+  <meta property="og:image" content="https://trazz.art/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,800;1,9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Garv Verma",
+    "alternateName": ["TrazHub", "Trazverse"],
+    "url": "https://trazz.art/",
+    "jobTitle": "Developer and visual artist",
+    "email": "mailto:garv@trazz.art",
+    "alumniOf": "Poornima University",
+    "knowsAbout": ["Web development", "Go", "Electron", "Minecraft server tools", "3D visualization", "Game design"],
+    "sameAs": [
+      "https://github.com/trazhub",
+      "https://www.linkedin.com/in/trazverse",
+      "https://www.instagram.com/garvzero/",
+      "https://www.youtube.com/@Trazhub",
+      "https://x.com/GarvSukuna69"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav class="site-nav">
-    <a href="#home" class="nav-logo">trazhub.exe</a>
-    <div class="nav-links" aria-label="Primary navigation">
-      <a href="#about">Lore</a>
-      <a href="#projects">Projects</a>
-      <a href="#stack">Stack</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="mailto:garv@trazz.art" class="nav-action">Ping me</a>
-  </nav>
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Garv's sketchbook, back to top">garv’s sketchbook</a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#art">Art</a>
+      <a href="#journey">Journey</a>
+      <a href="#now">Desk</a>
+      <a href="#contact">Say hi</a>
+    </nav>
+    <button class="btn btn-sm" id="workWithMe" type="button">Book a call</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Now serving code, cubes, and questionable commits</p>
-        <h1>Hi, I am Garv. I make software behave and pixels look expensive.</h1>
-        <p class="hero-text">
-          Software engineer by day, 3D artist by the next tab. I build web apps, Java tools, Minecraft utilities, self-hosted experiments, and 3D visuals with just enough chaos to keep the loading screen interesting.
+  <main id="main">
+    <!-- ───────────────────────── hero ───────────────────────── -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="hand hello">hello, I’m</p>
+        <h1 id="heroTitle">
+          Garv
+          <span class="underlined">Verma<svg class="scribble" viewBox="0 0 360 26" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 C 50 5, 110 24, 170 12 S 290 6, 356 14" /></svg></span>
+        </h1>
+        <p class="hero-lede">
+          I make <mark>software that looks like art</mark>: Minecraft tools, relays, 3D visuals and other tiny internet
+          machines. I’m a game design student in Jaipur, India, and I’m building
+          <a href="https://voxelport.in" target="_blank" rel="noopener">VoxelPort</a>.
         </p>
-        <div class="hero-actions">
-          <a href="#projects" class="button button-primary">Inspect projects</a>
-          <a href="https://github.com/trazhub" target="_blank" rel="noreferrer" class="button button-secondary">Open GitHub</a>
-          <a href="#contact" class="button button-secondary">Send signal</a>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#work">See what I’ve made</a>
+          <button class="btn" id="workWithMeHero" type="button">Book a call</button>
         </div>
+        <p class="hand hint" aria-hidden="true">psst… the stickers are draggable →</p>
       </div>
 
-      <aside class="console-card tilt-card reveal reveal-delay-1" aria-label="Garv status console">
-        <div class="console-top">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="portrait-wrap">
-          <img src="asessts/Me.jpeg" alt="Garv portrait" />
-        </div>
-        <div class="console-lines">
-          <p><span>$</span> whoami</p>
-          <strong>garv / trazhub</strong>
-          <p><span>$</span> status</p>
-          <strong>available for builds, fixes, and weird ideas</strong>
-          <p><span>$</span> <span id="typeLine">render --quality</span></p>
-          <strong id="typeOutput">high, unless the deadline says otherwise</strong>
-        </div>
-      </aside>
-    </section>
+      <div class="hero-photo">
+        <figure class="polaroid">
+          <span class="tape" aria-hidden="true"></span>
+          <img src="./assets/me.jpg" width="640" height="800" alt="Portrait of Garv Verma" />
+          <figcaption class="hand">me, mid-debug</figcaption>
+        </figure>
+        <svg class="arrow" viewBox="0 0 120 90" aria-hidden="true"><path d="M8 8 C 60 2, 100 30, 88 78" /><path d="M72 62 L 88 80 L 104 60" /></svg>
+        <span class="hand arrow-note" aria-hidden="true">yes, the real me</span>
 
-    <section class="ticker" aria-label="Skills">
-      <div class="ticker-track">
-        <span>Java</span>
-        <span>JavaScript</span>
-        <span>Node.js</span>
-        <span>3D Art</span>
-        <span>Minecraft tooling</span>
-        <span>Self-hosting</span>
-        <span>Cloudflare Tunnel</span>
-        <span>UI that does not fight back</span>
-        <span>Java</span>
-        <span>JavaScript</span>
-        <span>Node.js</span>
-        <span>3D Art</span>
-        <span>Minecraft tooling</span>
-        <span>Self-hosting</span>
-        <span>Cloudflare Tunnel</span>
-        <span>UI that does not fight back</span>
+        <span class="sticker sticker-badge" data-drag style="--x:0px;--y:0px;--rot:-8deg"><b>available</b>for freelance</span>
+        <span class="sticker pix" data-pix="heart" data-drag style="--x:0px;--y:0px;--rot:10deg" aria-hidden="true"></span>
+        <span class="sticker pix" data-pix="pickaxe" data-drag style="--x:0px;--y:0px;--rot:-14deg" aria-hidden="true"></span>
+        <span class="sticker pix" data-pix="block" data-drag style="--x:0px;--y:0px;--rot:6deg" aria-hidden="true"></span>
+        <span class="sticker pix" data-pix="gem" data-drag style="--x:0px;--y:0px;--rot:-5deg" aria-hidden="true"></span>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Character lore</p>
-        <h2>Software engineer. 3D artist. Professional tab collector.</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-copy reveal reveal-delay-1">
+    <!-- ───────────────────────── work ───────────────────────── -->
+    <section class="section" id="work" aria-labelledby="workTitle">
+      <header class="section-head reveal">
+        <p class="hand kicker">01 / the work</p>
+        <h2 id="workTitle">Things I’ve made <em>(and shipped)</em></h2>
+        <p class="hand aside">most of it is Minecraft’s fault.</p>
+      </header>
+
+      <article class="feature reveal">
+        <a class="feature-visual" href="https://voxelport.in" target="_blank" rel="noopener" aria-label="Open voxelport.in">
+          <span class="tape tape-l" aria-hidden="true"></span>
+          <img src="./assets/voxelport-hero.png" width="1920" height="1080" alt="VoxelPort artwork: a pixel-art relay tower connecting a house to three Minecraft players" loading="lazy" />
+        </a>
+        <div class="feature-copy">
+          <p class="tag">featured · 2026 · founder &amp; sole developer</p>
+          <h3>VoxelPort</h3>
           <p>
-            I like building things that are useful, slightly over-engineered in the fun way, and nice enough to show people without saying "ignore the UI for now."
+            A free, open-source app that lets anyone host a Minecraft server from a PC or an Android phone, with no port
+            forwarding. I made it because Jio and Airtel make port forwarding impossible. It’s an Electron desktop app,
+            a Go relay running in India, an Android beta, a React website and a Discord bot with AI-assisted support
+            tickets. Built with an AI coding assistant, and fully open source.
           </p>
-          <p>
-            My comfort zone is where engineering meets visuals: tools that work, dashboards that make sense, Minecraft infrastructure that does not require router archaeology, and 3D work that gives projects some personality.
-          </p>
-        </div>
-        <div class="fun-stats reveal reveal-delay-2">
-          <div>
-            <span>Build mode</span>
-            <strong>Shipping</strong>
-            <p>Small tools, websites, dashboards, and open-source experiments.</p>
-          </div>
-          <div>
-            <span>Art mode</span>
-            <strong>Rendering</strong>
-            <p>3D scenes, voxel-inspired visuals, and product-style presentation.</p>
-          </div>
-          <div>
-            <span>Server mode</span>
-            <strong>Self-hosting</strong>
-            <p>Ubuntu home server, tunnels, domains, and the occasional "why is DNS like this" moment.</p>
-          </div>
-          <div>
-            <span>Debug mode</span>
-            <strong>Suspicious</strong>
-            <p>If it worked yesterday, I will still blame cache first.</p>
+          <ul class="chips" aria-label="Technologies">
+            <li>Electron</li><li>Go</li><li>React</li><li>TypeScript</li><li>Android</li><li>WebSockets</li>
+          </ul>
+          <div class="links">
+            <a class="btn btn-primary" href="https://voxelport.in" target="_blank" rel="noopener">voxelport.in ↗</a>
+            <a class="btn" href="https://github.com/VOXELPORT" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://apps.microsoft.com/detail/9NGRX9CFNBD6" target="_blank" rel="noopener">Microsoft Store</a>
+            <a class="btn" href="https://discord.gg/JAUfmey2fP" target="_blank" rel="noopener">Discord</a>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="projects" id="projects">
-      <div class="projects-head reveal">
-        <div>
-          <p class="eyebrow">Things I made instead of sleeping early</p>
-          <h2>Projects with main-character energy.</h2>
-        </div>
-        <a href="https://github.com/trazhub" target="_blank" rel="noreferrer">All repos</a>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card project-featured reveal">
-          <div class="project-copy">
-            <span class="project-index">01 / Featured</span>
-            <h3>LOCALM</h3>
-            <p>
-              A peer-to-peer networking app for hosting Minecraft servers from your own machine without turning router settings into a boss fight. LOCALM helps you invite friends, manage connections, hide your IP, and keep the whole setup calmer than a public server chat.
-            </p>
-            <div class="project-tags">
-              <span>One-click hosting</span>
-              <span>Encrypted tunnels</span>
-              <span>Privacy focused</span>
-              <span>Minecraft servers</span>
-            </div>
-            <div class="project-links">
-              <a href="https://localm.eu.org/" target="_blank" rel="noreferrer">Visit LOCALM</a>
-              <a href="https://github.com/LocalMiner" target="_blank" rel="noreferrer">Source</a>
-            </div>
-          </div>
-          <div class="localm-visual tilt-card" aria-hidden="true">
-            <div class="cube cube-a">HOST</div>
-            <div class="cube cube-b">P2P</div>
-            <div class="cube cube-c">IP?</div>
-            <div class="terminal-mini">
-              <p>$ localm start</p>
-              <p>server: online</p>
-              <p>friends: connected</p>
-              <p>router: untouched</p>
-            </div>
-          </div>
-        </article>
-
-        <a href="https://github.com/trazhub/Discord-Attachment-Viewer-" target="_blank" rel="noreferrer" class="project-card reveal reveal-delay-1">
-          <span class="project-index">02</span>
-          <h3>Discord Attachment Viewer</h3>
-          <p>For the moment when a file says "trust me" and your security instincts say absolutely not.</p>
-          <div class="project-tags">
-            <span>JavaScript</span>
-            <span>Security</span>
-            <span>Discord API</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/trazhub/Storefileswithjs" target="_blank" rel="noreferrer" class="project-card reveal reveal-delay-2">
-          <span class="project-index">03</span>
-          <h3>StoreFilesWithJS</h3>
-          <p>A lightweight file storage utility for moving files around without inventing a new personal crisis.</p>
-          <div class="project-tags">
-            <span>Node.js</span>
-            <span>VPS</span>
-            <span>Storage</span>
-          </div>
-        </a>
-
-        <a href="https://arge.in" target="_blank" rel="noreferrer" class="project-card reveal reveal-delay-3">
-          <span class="project-index">04</span>
-          <h3>aRGe</h3>
-          <p>E-commerce, brand visuals, and presentation work for when the product needs to look like it has its life together.</p>
-          <div class="project-tags">
-            <span>Shopify</span>
-            <span>Branding</span>
-            <span>Graphics</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="stack" id="stack">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Loadout</p>
-        <h2>Tools I bring to the party.</h2>
-      </div>
-      <div class="stack-grid reveal reveal-delay-1">
-        <div class="stack-card">
-          <span>Engineering</span>
-          <p>Java, JavaScript, Node.js, HTML, CSS, APIs, dashboards, desktop utilities.</p>
-        </div>
-        <div class="stack-card">
-          <span>3D and design</span>
-          <p>3D scenes, voxel-style art direction, interface polish, graphics, and product visuals.</p>
-        </div>
-        <div class="stack-card">
-          <span>Server stuff</span>
-          <p>Ubuntu home server, Cloudflare Tunnel, VPS workflows, self-hosted tools, domains, and deployment sanity.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="contact-inner reveal">
-        <p class="eyebrow">Final boss: inbox</p>
-        <h2>Want to build something?</h2>
+      <div class="sticky-row">
+      <p class="hand sticky-lead" aria-hidden="true">where it all started →</p>
+      <aside class="sticky reveal" aria-label="Where it started">
+        <span class="pin" aria-hidden="true"></span>
+        <p class="hand sticky-title">Local Miner / LocalM</p>
         <p>
-          Send me a message if you need a website, a tool, a 3D visual, a Minecraft-related build, or someone to stare at a bug until it confesses.
+          Minecraft hosting from your own PC without port forwarding or a VPN. It’s the project that pulled me into
+          building things like this, and the reason VoxelPort exists. I worked on LocalM with the Local Miner team.
+          Thank you, genuinely.
         </p>
-        <a href="mailto:garv@trazz.art" class="email-link">garv@trazz.art</a>
-        <div class="social-links">
-          <a href="https://github.com/trazhub" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.instagram.com/garvzero/" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://x.com/GarvSukuna69" target="_blank" rel="noreferrer">X / Twitter</a>
-          <a href="https://www.youtube.com/@Trazhub" target="_blank" rel="noreferrer">YouTube</a>
+        <p class="links"><a href="https://localm.eu.org" target="_blank" rel="noopener">localm.eu.org ↗</a><a href="https://github.com/LocalMiner" target="_blank" rel="noopener">GitHub ↗</a></p>
+      </aside>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <p class="tag">web · 2026</p>
+          <h3>TrazHub</h3>
+          <p>This site. A link hub and portfolio with a live Discord and Spotify presence card, a built-in meeting booking flow, and stickers you can drag around.</p>
+          <ul class="chips"><li>Vite</li><li>Lanyard</li><li>CSS</li></ul>
+          <div class="links"><a href="https://github.com/trazhub/socialss" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <p class="tag">web · cloud</p>
+          <h3>TrazCloud</h3>
+          <p>A personal media vault: drag-and-drop uploads of JPG, PNG, MP4 and WEBM to Cloudflare R2, shareable at speed.</p>
+          <ul class="chips"><li>Cloudflare R2</li><li>JavaScript</li></ul>
+          <div class="links"><a href="https://cloud.opop.eu.org" target="_blank" rel="noopener">Live ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <p class="tag">web · college fest</p>
+          <h3>Lakshay 2026 portal</h3>
+          <p>A registration portal for a college fest: real-time validation, category filters (Sports, Cultural, E-Sports) and an admin dashboard. Built with Akshat Mehta.</p>
+          <ul class="chips"><li>Next.js 15</li><li>Prisma</li><li>PostgreSQL</li><li>Tailwind</li></ul>
+          <div class="links"><a href="https://lakshay-2026.vercel.app" target="_blank" rel="noopener">Live ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <p class="tag">web · art &amp; fashion</p>
+          <h3>aRGe</h3>
+          <p>The website for aRGe, a wearable-art and streetwear collective running live painting experiences in Delhi.</p>
+          <ul class="chips"><li>Web</li><li>Design</li></ul>
+          <div class="links"><a href="https://arge.in" target="_blank" rel="noopener">arge.in ↗</a><a href="https://github.com/trazhub/Arge" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <p class="tag">minecraft · server mod</p>
+          <h3>WaypointsLite</h3>
+          <p>Personal waypoints and click-through teleport requests for non-OP players, without handing out full essentials-style permissions. Also a server-side Fabric port.</p>
+          <ul class="chips"><li>Java</li><li>PaperMC</li><li>Fabric</li></ul>
+          <div class="links"><a href="https://github.com/trazhub/waypointslite-fabric" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <p class="tag">minecraft · performance</p>
+          <h3>XPMerger</h3>
+          <p>Merges nearby XP orbs to cut entity lag from wither farms and mob grinders, with an instant merge plus a spatial-grid sweep.</p>
+          <ul class="chips"><li>Java</li><li>PaperMC</li><li>Maven</li></ul>
+          <div class="links"><a href="https://github.com/trazhub/xpmerger" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+      </div>
+      <p class="more reveal">The rest of the pile is on <a href="https://github.com/trazhub" target="_blank" rel="noopener">github.com/trazhub</a>.</p>
+    </section>
+
+    <!-- ───────────────────────── art ───────────────────────── -->
+    <section class="section art" id="art" aria-labelledby="artTitle">
+      <div class="art-sheet reveal">
+        <div class="art-copy">
+          <p class="hand kicker">02 / the other half</p>
+          <h2 id="artTitle">I draw, model and design, too.</h2>
+          <p>
+            3D visuals, animation and UI are what I study and what I do for fun. The renders and design bits live on
+            Instagram; the build logs and experiments live on YouTube.
+          </p>
+          <div class="links">
+            <a class="btn btn-primary" href="https://www.instagram.com/garvzero/" target="_blank" rel="noopener">Instagram ↗</a>
+            <a class="btn" href="https://www.youtube.com/@Trazhub" target="_blank" rel="noopener">YouTube ↗</a>
+          </div>
+        </div>
+        <div class="sticker-sheet" aria-hidden="true">
+          <span class="pix" data-pix="block"></span>
+          <span class="pix" data-pix="pickaxe"></span>
+          <span class="pix" data-pix="gem"></span>
+          <span class="pix" data-pix="heart"></span>
+          <p class="hand">a tiny sticker sheet, drawn in code</p>
         </div>
       </div>
+      <div class="reels-wrap">
+        <header class="reels-head reveal">
+          <p class="hand kicker">straight from Instagram</p>
+          <h3>Recent edits</h3>
+          <p>These play right here, from my <a href="https://www.instagram.com/garvzero/" target="_blank" rel="noopener">@garvzero</a> account. Tap one to watch.</p>
+        </header>
+        <div class="reels" id="reels">
+          <figure class="reel reveal" data-ig="Dd4P5R6TuAg">
+            <span class="tape" aria-hidden="true"></span>
+            <div class="reel-frame"></div>
+            <figcaption><span class="hand">Subway scene</span><a href="https://www.instagram.com/reel/Dd4P5R6TuAg/" target="_blank" rel="noopener">Open on Instagram ↗</a></figcaption>
+          </figure>
+          <figure class="reel reveal" data-ig="DdPVuxSxrZA">
+            <span class="tape" aria-hidden="true"></span>
+            <div class="reel-frame"></div>
+            <figcaption><span class="hand">Uski aankhon mein failaa kaajal</span><a href="https://www.instagram.com/reel/DdPVuxSxrZA/" target="_blank" rel="noopener">Open on Instagram ↗</a></figcaption>
+          </figure>
+          <figure class="reel reveal" data-ig="DcdRmPtzVvD">
+            <span class="tape" aria-hidden="true"></span>
+            <div class="reel-frame"></div>
+            <figcaption><span class="hand">Comeback era!</span><a href="https://www.instagram.com/reel/DcdRmPtzVvD/" target="_blank" rel="noopener">Open on Instagram ↗</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── journey ───────────────────────── -->
+    <section class="section" id="journey" aria-labelledby="journeyTitle">
+      <header class="section-head reveal">
+        <p class="hand kicker">03 / the journey</p>
+        <h2 id="journeyTitle">Student, builder, <em>team lead.</em></h2>
+      </header>
+      <div class="journey">
+        <div class="about reveal">
+          <p>
+            Hi, I’m Garv. I like taking a project from a blank file to something live: apps, relays, link pages,
+            real-time widgets, 3D backgrounds, small tools. I study Game Design &amp; AR/VR at Poornima University
+            in Jaipur, I lead a team at AIESEC in India, and I’m building VoxelPort, a free tool that puts Minecraft
+            servers online without port forwarding.
+          </p>
+          <p>I work with code and with 3D, and I’m most useful where the two overlap.</p>
+          <dl class="skills">
+            <div><dt>Code</dt><dd>JavaScript · TypeScript · Java · Go · C++ · Node.js · React · Electron</dd></div>
+            <div><dt>Web &amp; real-time</dt><dd>HTML &amp; CSS · Vite · Three.js / WebGL · WebSockets</dd></div>
+            <div><dt>Ops</dt><dd>Linux · nginx · Git · GitHub Actions</dd></div>
+            <div><dt>Art</dt><dd>3D visualization · animation · UI &amp; motion design</dd></div>
+          </dl>
+        </div>
+
+        <ol class="timeline reveal">
+          <li><span class="when hand">2026 — now</span><h3>Founder, VoxelPort</h3><p>Solo founder and developer of a free, open-source Minecraft hosting tool: desktop app, Android beta, relay, website and community.</p></li>
+          <li><span class="when hand">May 2026 — now</span><h3>Team Lead, AIESEC in India</h3><p>Leading a small team out of the Rajkot chapter, after joining as a member in January 2026 — team management and building out the leadership bench.</p></li>
+          <li><span class="when hand">Jun 2026 — now</span><h3>Software Engineer, Genat Water</h3><p>Part-time engineering work — Java and software infrastructure, remote out of New Delhi.</p></li>
+          <li><span class="when hand">Jul 2025 — now</span><h3>Social Media Manager, Jagniv</h3><p>Running the social accounts end to end plus backend work on the website, fully remote.</p></li>
+          <li><span class="when hand">Jun 2025</span><h3>AIESEC Global Volunteer, Menoufia, Egypt</h3><p>A month-long international internship on-site in Egypt, working alongside professional designers and artists on a project contributing to UN SDG Goal 8 — arranged through AIESEC in Jaipur.</p></li>
+          <li><span class="when hand">Apr 2025 — now</span><h3>Student Representative, Poornima University</h3><p>Core member of the Equal Opportunity Cell, working on anti-discrimination policy and inclusivity across academics and campus life.</p></li>
+          <li><span class="when hand">Nov 2024 — now</span><h3>Vice Captain, Students’ Council</h3><p>Event development and management for the council at Poornima University, Jaipur.</p></li>
+          <li><span class="when hand">Aug 2024 — now</span><h3>Game Design &amp; AR/VR Student, Poornima University</h3><p>Coursework in 3D visualization and animation design alongside everything else above.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── desk (live) ───────────────────────── -->
+    <section class="section" id="now" aria-labelledby="nowTitle">
+      <header class="section-head reveal">
+        <p class="hand kicker">04 / my desk, right now</p>
+        <h2 id="nowTitle">What’s on the desk <em>live</em></h2>
+      </header>
+      <div class="desk">
+        <a class="desk-item discord reveal" href="https://discord.com/users/835584835443228702" target="_blank" rel="noopener" aria-label="Open my Discord profile">
+          <p class="tag">discord</p>
+          <img src="https://lanyard.cnrad.dev/api/835584835443228702?theme=dark&amp;hideActivity=true" alt="Live Discord presence for Garv" loading="lazy" />
+        </a>
+
+        <div class="desk-item ticket reveal" id="spotifyTile">
+          <p class="tag">spotify <span class="live-badge" id="spotifyBadge">offline</span></p>
+          <p class="spotify-text" id="spotifyCardText">Checking what’s playing…</p>
+          <div class="progress" id="spotifyProgress" aria-hidden="true"><span></span></div>
+          <a href="https://open.spotify.com/user/31tj6hgdeqe5tgzupl4kcyjcn5ye" target="_blank" rel="noopener">Open my Spotify ↗</a>
+        </div>
+
+        <div class="desk-item postit reveal">
+          <p class="hand postit-title">Right now I’m…</p>
+          <ul class="now-list">
+            <li>shipping VoxelPort updates and the Android beta</li>
+            <li>growing the VoxelPort Discord and support tickets</li>
+            <li>leading a team at AIESEC in India</li>
+            <li>studying Game Design &amp; AR/VR</li>
+          </ul>
+        </div>
+
+        <a class="desk-item stamp reveal" href="https://github.com/trazhub" target="_blank" rel="noopener">
+          <p class="tag">github</p>
+          <p class="big" id="githubStats">trazhub</p>
+          <span>source, experiments and utilities ↗</span>
+        </a>
+
+        <a class="desk-item stamp stamp-heart reveal" href="https://github.com/sponsors/trazhub" target="_blank" rel="noopener">
+          <p class="tag">sponsor</p>
+          <p class="big">♥ keep it going</p>
+          <span>support the projects on GitHub Sponsors ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── contact ───────────────────────── -->
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <p class="hand kicker reveal">05 / contact</p>
+      <h2 class="contact-title reveal" id="contactTitle">Say <span class="circled">hi<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M24 54 C 10 18, 120 -2, 176 26 C 204 52, 76 98, 26 70 C 8 58, 30 30, 74 20" /></svg></span>.</h2>
+      <p class="contact-lede reveal">Projects, freelance work, collabs, or just Minecraft. I read everything.</p>
+      <div class="contact-cta reveal">
+        <a class="btn btn-primary btn-lg" href="mailto:garv@trazz.art">garv@trazz.art</a>
+        <button class="btn btn-lg" id="workWithMeContact" type="button">Book a call</button>
+      </div>
+      <ul class="socials reveal" aria-label="Elsewhere">
+        <li><a href="https://github.com/trazhub" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/trazverse" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/garvzero/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@Trazhub" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://x.com/GarvSukuna69" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://discord.com/users/835584835443228702" target="_blank" rel="noopener">Discord</a></li>
+        <li><a href="https://steamcommunity.com/id/Trazhub/" target="_blank" rel="noopener">Steam</a></li>
+        <li><a href="https://open.spotify.com/user/31tj6hgdeqe5tgzupl4kcyjcn5ye" target="_blank" rel="noopener">Spotify</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>(c) 2026 trazhub</span>
-    <span>Static site. Ubuntu-ready. Tunnel-friendly.</span>
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Garv Verma · TrazHub · made in Jaipur</span>
+    <span class="footer-right">
+      <button class="link-btn" id="shareButton" type="button">Copy page link</button>
+      <a href="#top">Back to top ↑</a>
+    </span>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="booking-dialog" id="bookingDialog" aria-labelledby="bookingTitle">
+    <div class="booking-header">
+      <h2 id="bookingTitle">Book a call</h2>
+      <button class="icon-button" id="bookingClose" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 6-12 12"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="booking-body" id="bookingBody">
+      <div class="booking-left">
+        <div class="cal-nav">
+          <button class="icon-button cal-nav-btn" id="calPrev" type="button" aria-label="Previous month">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <strong id="calMonthLabel"></strong>
+          <button class="icon-button cal-nav-btn" id="calNext" type="button" aria-label="Next month">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="cal-dow" id="calDow"></div>
+        <div class="cal-days" id="calDays"></div>
+        <div class="cal-slots" id="calSlots"></div>
+      </div>
+
+      <div class="booking-right">
+        <label class="book-label"><span>Your name</span><input id="bookName" type="text" placeholder="Full name" autocomplete="name" /></label>
+        <label class="book-label"><span>Your email</span><input id="bookEmail" type="email" placeholder="you@email.com" autocomplete="email" /></label>
+        <label class="book-label"><span>Topic / project idea</span><textarea id="bookTopic" placeholder="What would you like to work on?" rows="4"></textarea></label>
+        <div class="book-selection" id="bookSelection" aria-live="polite">No date or time selected yet.</div>
+        <button class="btn btn-primary book-submit" id="bookSubmit" type="button">Request meeting →</button>
+      </div>
+    </div>
+
+    <div class="booking-success" id="bookingSuccess" hidden>
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <h3>Request sent!</h3>
+      <p id="successDetails"></p>
+      <p class="success-sub">Your email client opened with the booking details — check your inbox for your copy. Google Calendar opened so you can save the slot and generate a Meet link.</p>
+      <button class="btn btn-primary" id="bookingSuccessClose" type="button">Done</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="./script.js"></script>
 </body>
 </html>

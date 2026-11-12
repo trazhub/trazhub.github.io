@@ -1,0 +1,12 @@
+# Add this block inside the `http { }` block in /etc/nginx/nginx.conf
+# (before the `include /etc/nginx/sites-enabled/*;` line)
+
+# Rate limiting zone — keyed by real client IP
+# 10 MB shared memory stores ~160,000 IPs; 10 requests/second per IP
+limit_req_zone $binary_remote_addr zone=trazlinks_api:10m rate=10r/s;
+
+# Return 429 instead of the default 503 when rate limited
+limit_req_status 429;
+
+# Log rate-limited requests
+limit_req_log_level warn;
